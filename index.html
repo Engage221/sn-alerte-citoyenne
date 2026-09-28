@@ -100,7 +100,7 @@
           <span class="dot dot-autre"></span> Autre (précisez)
         </label>
       </div>
-      <input type="text" id="custom-type" placeholder="Précisez le type d'incident" class="hidden" style="width:100%; padding:8px; margin-top:8px; border:1px solid var(--line); border-radius:6px;">
+      <input type="text" id="custom-type" placeholder="Précisez le type d'incident" class="hidden" style="width:100%; padding:8px; margin-top:8px; border:1px solid var(--line); border-radius:6px; font-family:inherit;">
 
       <label>Description</label>
       <textarea id="description" placeholder="Ex : Quartier plongé dans le noir depuis ce matin, rue bloquée par l'eau…" required></textarea>
@@ -121,12 +121,6 @@
         </label>
       </div>
 
-      <label>Emplacement</label>
-      <div class="location-row">
-        <button type="button" id="locate-btn">Utiliser ma position</button>
-        <span id="location-status">ou touchez la carte pour placer le repère</span>
-      </div>
-
       <label for="photo-input">Photo (facultatif)</label>
       <input type="file" id="photo-input" accept="image/*" capture="environment">
       <div id="photo-preview" class="hidden"><img id="photo-preview-img" alt="Aperçu de la photo"></div>
@@ -136,6 +130,12 @@
     </form>
 
     <img src="community-photo.jpg" alt="Des jeunes du quartier Médina utilisant Alerte Citoyenne" class="community-photo">
+
+    <label style="margin-top:16px;">Emplacement</label>
+    <div class="location-row">
+      <button type="button" id="locate-btn">Utiliser ma position</button>
+      <span id="location-status">ou touchez la carte pour placer le repère</span>
+    </div>
 
     <div id="alert-authorities" class="alert-box hidden">
       <p>Signalement enregistré. Vous pouvez aussi prévenir directement les autorités :</p>
