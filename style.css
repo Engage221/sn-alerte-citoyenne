@@ -84,10 +84,10 @@ textarea{
 .dot-gendarmerie{background:var(--gendarmerie);}
 .dot-autre{background:var(--autre);}
 
-.location-row{display:flex; flex-direction:column; gap:10px;}
+.location-row{display:flex; flex-direction:column; gap:10px; align-items:flex-start;}
 #locate-btn{
   background:var(--sand); border:1px solid var(--line); border-radius:6px;
-  padding:8px 12px; cursor:pointer; font-size:0.85rem;
+  padding:8px 12px; cursor:pointer; font-size:0.85rem; align-self:flex-start;
 }
 #location-status{font-size:0.82rem; color:#5b6b64;}
 
@@ -381,5 +381,5 @@ html{scroll-behavior:smooth; scroll-padding-top:90px;}
 }
 
 .community-photo{
-  width:100%; border-radius:10px; margin-top:16px; display:block;
+  width:100%; border-radius:10px; margin-top:16px; margin-bottom:16px; display:block;
 }
