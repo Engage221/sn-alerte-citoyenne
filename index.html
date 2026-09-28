@@ -100,7 +100,7 @@
           <span class="dot dot-autre"></span> Autre (précisez)
         </label>
       </div>
-      <input type="text" id="custom-type" placeholder="Précisez le type d'incident" class="hidden" style="width:100%; padding:8px; margin-top:8px; border:1px solid var(--line); border-radius:6px; font-family:inherit;">
+      <input type="text" id="custom-type" placeholder="Précisez le type d'incident" class="hidden" style="width:100%; padding:8px; margin-top:8px; border:1px solid var(--line); border-radius:6px;">
 
       <label>Description</label>
       <textarea id="description" placeholder="Ex : Quartier plongé dans le noir depuis ce matin, rue bloquée par l'eau…" required></textarea>
@@ -121,6 +121,12 @@
         </label>
       </div>
 
+      <label>Emplacement</label>
+      <div class="location-row">
+        <button type="button" id="locate-btn">Utiliser ma position</button>
+        <span id="location-status">ou touchez la carte pour placer le repère</span>
+      </div>
+
       <label for="photo-input">Photo (facultatif)</label>
       <input type="file" id="photo-input" accept="image/*" capture="environment">
       <div id="photo-preview" class="hidden"><img id="photo-preview-img" alt="Aperçu de la photo"></div>
@@ -131,10 +137,22 @@
 
     <img src="community-photo.jpg" alt="Des jeunes du quartier Médina utilisant Alerte Citoyenne" class="community-photo">
 
-    <label>Emplacement</label>
-    <div class="location-row">
-      <button type="button" id="locate-btn">Utiliser ma position</button>
-      <span id="location-status">ou touchez la carte pour placer le repère</span>
+    <div class="tech-section">
+      <h2>Notre positionnement</h2>
+      <p>
+        Ce projet est construit autour de trois convictions : le <strong>code ouvert</strong> (open source), pour que
+        chaque communauté puisse s'approprier et adapter l'outil ; les <strong>données ouvertes</strong> (open data),
+        pour que les signalements citoyens restent transparents et accessibles à tous ; et l'<strong>intelligence
+        artificielle</strong>, utilisée pour accélérer le développement d'outils civiques utiles, sans dépendance à un
+        fournisseur unique.
+      </p>
+      <div class="tech-badges">
+        <div class="tech-badge"><span class="tech-icon">✦</span><span>Claude Code</span></div>
+        <div class="tech-badge"><span class="tech-icon">🔥</span><span>Firebase</span></div>
+        <div class="tech-badge"><span class="tech-icon">🐙</span><span>GitHub</span></div>
+        <div class="tech-badge"><span class="tech-icon">🗺️</span><span>OpenStreetMap</span></div>
+        <div class="tech-badge"><span class="tech-icon">🌐</span><span>Open Data</span></div>
+      </div>
     </div>
 
     <div id="alert-authorities" class="alert-box hidden">
@@ -169,24 +187,6 @@
         <a href="https://github.com/Link4dev/sn-alerte-citoyenne" target="_blank" class="repo-btn">Voir le code sur GitHub</a>
         <a href="https://github.com/Link4dev/sn-alerte-citoyenne/blob/main/GUIDE-ASC.md" target="_blank" class="repo-btn repo-btn-outline">Créer la plateforme de mon quartier</a>
       </p>
-    </div>
-
-    <div class="tech-section">
-      <h2>Notre positionnement</h2>
-      <p>
-        Ce projet est construit autour de trois convictions : le <strong>code ouvert</strong> (open source), pour que
-        chaque communauté puisse s'approprier et adapter l'outil ; les <strong>données ouvertes</strong> (open data),
-        pour que les signalements citoyens restent transparents et accessibles à tous ; et l'<strong>intelligence
-        artificielle</strong>, utilisée pour accélérer le développement d'outils civiques utiles, sans dépendance à un
-        fournisseur unique.
-      </p>
-      <div class="tech-badges">
-        <div class="tech-badge"><span class="tech-icon">✦</span><span>Claude Code</span></div>
-        <div class="tech-badge"><span class="tech-icon">🔥</span><span>Firebase</span></div>
-        <div class="tech-badge"><span class="tech-icon">🐙</span><span>GitHub</span></div>
-        <div class="tech-badge"><span class="tech-icon">🗺️</span><span>OpenStreetMap</span></div>
-        <div class="tech-badge"><span class="tech-icon">🌐</span><span>Open Data</span></div>
-      </div>
     </div>
   </section>
 
