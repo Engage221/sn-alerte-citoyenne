@@ -84,7 +84,7 @@ textarea{
 .dot-gendarmerie{background:var(--gendarmerie);}
 .dot-autre{background:var(--autre);}
 
-.location-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+.location-row{display:flex; flex-direction:column; gap:10px;}
 #locate-btn{
   background:var(--sand); border:1px solid var(--line); border-radius:6px;
   padding:8px 12px; cursor:pointer; font-size:0.85rem;
