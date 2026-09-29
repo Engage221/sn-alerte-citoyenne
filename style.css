@@ -150,8 +150,8 @@ textarea{
   html{scroll-padding-top:170px;}
 
   main{grid-template-columns:1fr; padding:14px 16px; gap:14px;}
-  .form-panel{grid-column:1; grid-row:auto; order:1;}
-  .map-panel{grid-column:1; grid-row:auto; order:2;}
+  .map-panel{grid-column:1; grid-row:auto; order:1;}
+  .form-panel{grid-column:1; grid-row:auto; order:2;}
   .about-panel{grid-column:1; grid-row:auto; order:3;}
   .dashboard-panel{grid-column:1; grid-row:auto; order:4;}
   .list-panel{grid-column:1; grid-row:auto; order:5;}
