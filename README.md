@@ -1,4 +1,4 @@
-# Alerte Citoyenne
+# Engage221
 
 Plateforme web **libre et open source** pour signaler des coupures de courant, zones inondées et autres incidents sur une carte partagée, avec possibilité d'alerter les autorités par WhatsApp.
 
@@ -25,7 +25,7 @@ Depuis un terminal, dans le dossier `incident-app` :
 ```bash
 git init
 git add .
-git commit -m "Première version de l'app Alerte Citoyenne"
+git commit -m "Première version de l'app Engage221"
 ```
 
 Créez ensuite un nouveau dépôt vide sur GitHub (bouton "New" sur github.com, sans README ni .gitignore), puis :
@@ -52,25 +52,11 @@ git push -u origin main
 - **Alerte aux autorités** : après l'envoi, un bouton ouvre WhatsApp avec un message prérempli vers le numéro configuré.
 - **Suivi du traitement** : les relais connectés (voir ci-dessous) peuvent indiquer si les autorités ont répondu et si une solution a été trouvée.
 
-## Activer les photos dans les signalements (Firebase Storage)
+## Photos dans les signalements
 
-1. Dans la console Firebase : **Build > Storage > Get started**.
-2. Choisissez une région (la même que votre Realtime Database de préférence), puis démarrez en **mode test**.
-3. Dans l'onglet **Rules** de Storage, utilisez :
+Les photos ne passent pas par Firebase Storage (qui nécessite désormais le forfait payant Blaze depuis février 2026), mais sont compressées côté navigateur puis stockées directement dans la Realtime Database, comme le reste du signalement. Aucune configuration supplémentaire n'est nécessaire — cela fonctionne dès que la Realtime Database (Étape 3 de l'installation) est en place.
 
-```
-rules_version = '2';
-service firebase.storage {
-  match /b/{bucket}/o {
-    match /photos/{fileName} {
-      allow read: if true;
-      allow write: if true;
-    }
-  }
-}
-```
-
-Comme pour la base de données, ceci reste ouvert pour la phase pilote — à restreindre plus tard si besoin (limiter la taille des fichiers, exiger une authentification pour l'upload, etc.).
+À savoir : chaque photo occupe environ 100 à 200 Ko dans la base. Le forfait gratuit offrant 1 Go de stockage, cela représente plusieurs milliers de signalements avec photo avant d'approcher la limite.
 
 ## Activer la connexion des relais (Admin / Démo)
 

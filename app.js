@@ -48,7 +48,7 @@ document.querySelectorAll(".map-view-btn").forEach((btn) => {
 });
 
 document.getElementById("contact-whatsapp").href =
-  `https://wa.me/${AUTHORITY_WHATSAPP_NUMBER}?text=${encodeURIComponent("Bonjour, je vous contacte au sujet d'Alerte Citoyenne.")}`;
+  `https://wa.me/${AUTHORITY_WHATSAPP_NUMBER}?text=${encodeURIComponent("Bonjour, je vous contacte au sujet d'Engage221.")}`;
 
 let selectedLatLng = null;
 let marker = null;
@@ -273,7 +273,7 @@ document.getElementById("report-form").addEventListener("submit", async (e) => {
     document.getElementById("location-status").textContent = "ou touchez la carte pour placer le repère";
 
     const msg = encodeURIComponent(
-      `Alerte citoyenne — ${label} (urgence : ${URGENCY[urgency].label})\n${description}\nLocalisation : https://www.google.com/maps?q=${report.lat},${report.lng}`
+      `Engage221 — ${label} (urgence : ${URGENCY[urgency].label})\n${description}\nLocalisation : https://www.google.com/maps?q=${report.lat},${report.lng}`
     );
     document.getElementById("whatsapp-link").href = `https://wa.me/${AUTHORITY_WHATSAPP_NUMBER}?text=${msg}`;
     document.getElementById("alert-authorities").classList.remove("hidden");
@@ -399,7 +399,7 @@ function renderReportItem(cluster) {
     ${cluster.photoBase64 ? `<img class="li-photo" src="${cluster.photoBase64}" alt="Photo du signalement">` : ""}
     ${controls}
     <div class="share-row">
-      <a class="share-btn" target="_blank" href="https://wa.me/?text=${encodeURIComponent(`🚨 ${label} signalé via Alerte Citoyenne${count > 1 ? ` (par ${count} personnes)` : ""} : ${cluster.description} — ${window.location.href.split('#')[0]}`)}">Partager WhatsApp</a>
+      <a class="share-btn" target="_blank" href="https://wa.me/?text=${encodeURIComponent(`🚨 ${label} signalé via Engage221${count > 1 ? ` (par ${count} personnes)` : ""} : ${cluster.description} — ${window.location.href.split('#')[0]}`)}">Partager WhatsApp</a>
       <a class="share-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href.split('#')[0])}">Partager Facebook</a>
     </div>
   `;

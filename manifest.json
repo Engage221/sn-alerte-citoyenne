@@ -1,6 +1,6 @@
 {
-  "name": "Alerte Citoyenne",
-  "short_name": "Alerte Citoyenne",
+  "name": "Engage221",
+  "short_name": "Engage221",
   "description": "Signalez coupures, inondations et incidents de votre quartier, et alertez les autorités.",
   "start_url": "./index.html",
   "scope": "./",

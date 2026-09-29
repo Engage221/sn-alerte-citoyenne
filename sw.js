@@ -1,4 +1,4 @@
-const CACHE_NAME = "alerte-citoyenne-v1";
+const CACHE_NAME = "engage221-v1";
 const CORE_ASSETS = [
   "./index.html",
   "./style.css",

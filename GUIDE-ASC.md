@@ -4,6 +4,10 @@ Ce projet est **libre et gratuit**. Chaque commune ou Association Sportive et Cu
 
 Chaque plateforme est indépendante : les signalements de votre quartier ne se mélangent pas avec ceux des autres.
 
+## Étape 0 — Présentez-vous
+
+Avant de dupliquer le projet, [ouvrez une issue ici pour vous présenter](https://github.com/Link4dev/sn-alerte-citoyenne/issues/new?template=nouvelle-plateforme.md) — votre ASC, votre quartier, vos coordonnées. Ça nous permet de vous accompagner et de garder une trace des communautés qui rejoignent le mouvement.
+
 ## Étape 1 — Copier le projet (« Fork »)
 
 1. Allez sur [github.com/Link4dev/sn-alerte-citoyenne](https://github.com/Link4dev/sn-alerte-citoyenne)
@@ -22,7 +26,7 @@ Chaque quartier doit avoir sa propre base Firebase, pour que ses signalements re
 
 ## Étape 3 — Personnaliser le nom et les couleurs (facultatif)
 
-Dans `index.html`, changez le titre "Alerte Citoyenne" par le nom de votre quartier ou de votre ASC. Dans `style.css`, les couleurs sont regroupées en haut du fichier (variables `--coupure`, `--inondation`, etc.) — modifiez-les selon l'identité visuelle de votre association.
+Dans `index.html`, changez le titre "Engage221" par le nom de votre quartier ou de votre ASC. Dans `style.css`, les couleurs sont regroupées en haut du fichier (variables `--coupure`, `--inondation`, etc.) — modifiez-les selon l'identité visuelle de votre association.
 
 ## Étape 4 — Publier votre site (gratuit)
 

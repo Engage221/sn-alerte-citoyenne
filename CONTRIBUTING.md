@@ -1,6 +1,6 @@
 # Contribuer au projet
 
-Merci de votre intérêt pour Alerte Citoyenne ! Ce projet est ouvert à toute contribution : correction de bugs, nouvelles fonctionnalités, traductions, amélioration du design.
+Merci de votre intérêt pour Engage221 ! Ce projet est ouvert à toute contribution : correction de bugs, nouvelles fonctionnalités, traductions, amélioration du design.
 
 ## Vous voulez juste créer la plateforme de votre quartier ou ASC ?
 
