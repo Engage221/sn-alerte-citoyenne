@@ -5,6 +5,7 @@ if (typeof RECAPTCHA_SITE_KEY !== "undefined" && RECAPTCHA_SITE_KEY && RECAPTCHA
 }
 
 const db = firebase.database();
+const auth = firebase.auth();
 const reportsRef = db.ref("signalements");
 
 const COLORS = {
@@ -281,8 +282,47 @@ document.getElementById("report-form").addEventListener("submit", async (e) => {
 });
 
 // Connexion des relais/autorités désactivée pour le moment.
-// Tous les signalements s'affichent en lecture seule (voir isAdmin ci-dessous).
-const isAdmin = false;
+// Tous les signalements s'affichent en lecture seule tant que personne n'est connecté.
+let isAdmin = false;
+
+document.getElementById("login-btn").addEventListener("click", () => {
+  const email = document.getElementById("admin-email").value.trim();
+  const password = document.getElementById("admin-password").value;
+  const errEl = document.getElementById("login-error");
+  errEl.classList.add("hidden");
+  auth.signInWithEmailAndPassword(email, password).catch(() => {
+    errEl.textContent = "Connexion impossible : e-mail ou mot de passe incorrect.";
+    errEl.classList.remove("hidden");
+  });
+});
+
+document.getElementById("logout-btn").addEventListener("click", () => auth.signOut());
+
+document.getElementById("change-password-btn").addEventListener("click", () => {
+  const newPassword = document.getElementById("new-password").value;
+  const msgEl = document.getElementById("password-change-msg");
+  msgEl.classList.remove("hidden");
+  if (newPassword.length < 6) {
+    msgEl.textContent = "Le mot de passe doit contenir au moins 6 caractères.";
+    return;
+  }
+  auth.currentUser.updatePassword(newPassword).then(() => {
+    msgEl.textContent = "Mot de passe mis à jour avec succès.";
+    document.getElementById("new-password").value = "";
+  }).catch((err) => {
+    msgEl.textContent = err.code === "auth/requires-recent-login"
+      ? "Par sécurité, déconnectez-vous puis reconnectez-vous avant de changer le mot de passe."
+      : "Erreur : impossible de mettre à jour le mot de passe.";
+  });
+});
+
+auth.onAuthStateChanged((user) => {
+  isAdmin = !!user;
+  document.getElementById("login-box").classList.toggle("hidden", isAdmin);
+  document.getElementById("account-box").classList.toggle("hidden", !isAdmin);
+  if (user) document.getElementById("account-email").textContent = user.email;
+  renderList();
+});
 
 // ---------- Liste, marqueurs, tableau de bord ----------
 const listEl = document.getElementById("report-list");
@@ -372,6 +412,7 @@ function renderReportItem(cluster) {
             <option value="oui" ${cluster.statutResolution === "oui" ? "selected" : ""}>Résolu</option>
           </select>
         </label>
+        <button type="button" class="delete-btn">🗑 Supprimer</button>
       </div>`;
   } else {
     controls = `
@@ -410,6 +451,14 @@ function renderReportItem(cluster) {
     });
     li.querySelector(".statut-select").addEventListener("change", (e) => {
       cluster.ids.forEach((id) => reportsRef.child(id).update({ statutResolution: e.target.value }));
+    });
+    li.querySelector(".delete-btn").addEventListener("click", () => {
+      const msg = cluster.count > 1
+        ? `Supprimer ce signalement et ses ${cluster.count} doublons regroupés ? Cette action est irréversible.`
+        : "Supprimer ce signalement ? Cette action est irréversible.";
+      if (confirm(msg)) {
+        cluster.ids.forEach((id) => reportsRef.child(id).remove());
+      }
     });
   }
 

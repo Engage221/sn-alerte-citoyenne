@@ -382,3 +382,10 @@ html{scroll-behavior:smooth; scroll-padding-top:90px;}
 .community-photo{
   width:100%; border-radius:10px; margin-top:16px; display:block;
 }
+
+.delete-btn{
+  background:#F4E4E1; color:var(--autre); border:1px solid var(--autre);
+  border-radius:6px; padding:6px 12px; font-size:0.78rem; font-weight:600; cursor:pointer;
+  align-self:flex-end;
+}
+.delete-btn:hover{background:var(--autre); color:white;}
