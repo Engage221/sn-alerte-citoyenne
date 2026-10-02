@@ -4,7 +4,6 @@
 // 4) Remplacez les valeurs ci-dessous par les vôtres
 
 const firebaseConfig = {
-const firebaseConfig = {
   apiKey: "AIzaSyAqUm5fOp_WitrVFz84R3Pc9GMoTEaCKfw",
   authDomain: "engage221.firebaseapp.com",
   projectId: "engage221",
