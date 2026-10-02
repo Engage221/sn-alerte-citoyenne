@@ -4,13 +4,14 @@
 // 4) Remplacez les valeurs ci-dessous par les vôtres
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCcyEgt-daXmfxYSKrOescDvybtNiHlvqY",
-  authDomain: "snalertes-citoyennes.firebaseapp.com",
-  databaseURL: "https://snalertes-citoyennes-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "snalertes-citoyennes",
-  storageBucket: "snalertes-citoyennes.firebasestorage.app",
-  messagingSenderId: "299219530530",
-  appId: "1:299219530530:web:f1426c1dd739bfdbce6b7b"
+const firebaseConfig = {
+  apiKey: "AIzaSyAqUm5fOp_WitrVFz84R3Pc9GMoTEaCKfw",
+  authDomain: "engage221.firebaseapp.com",
+  projectId: "engage221",
+  storageBucket: "engage221.firebasestorage.app",
+  messagingSenderId: "491140962829",
+  appId: "1:491140962829:web:8663e5f691895b57af5344",
+  measurementId: "G-B7DS3VPT0V"
 };
 
 // Numéro WhatsApp des autorités locales à alerter (format international, sans "+")
